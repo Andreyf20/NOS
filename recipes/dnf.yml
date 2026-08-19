@@ -1,0 +1,93 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+# image will be published to ghcr.io/andreyf20/dnf
+name: dnf
+description: This is my personal collection of dnf packages.
+
+base-image: ghcr.io/ublue-os/bazzite-gnome-nvidia-open
+image-version: latest
+
+modules:
+  - type: files
+    files:
+      - source: system
+        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+
+  - type: dnf
+    repos:
+      copr:
+        - atim/starship
+        - avengemedia/dms # Niri
+        - faugus/faugus-launcher
+        - tofik/sway # nwg-look
+        - tofik/nwg-shell # nwg-look
+        - alternateved/keyd
+        - scottames/awww
+        - mineiro/satty
+    install:
+      packages:
+        # Terminal stuff
+        - starship
+        - fish
+        - unzip
+        - tmux
+        - trash-cli
+        - ripgrep
+        - fd-find
+        - fzf
+        - bat
+        - eza
+        - zoxide
+        - lazygit
+        - diff-so-fancy
+        # Greater session manager
+        - ly
+        # WMs
+        - niri
+        - mangowm
+        - noctalia
+        - fuzzel
+        - grim
+        - slurp
+        - satty
+        - awww
+        # Thunar stuff
+        - thunar
+        - thunar-archive-plugin
+        - thunar-media-tags-plugin
+        - thunar-volman
+        - gvfs
+        - tumbler
+        - ffmpegthumbnailer
+        - xarchiver
+        # Random?
+        - qalculate
+        - ghostty
+        - kitty
+        - faugus-launcher
+        - nwg-look
+        - keyd
+        - qt6ct
+        - kvantum
+        - xdg-desktop-portal-wlr
+        - tailscale
+        - playit
+        - cloudflared
+        # Setup virtualization with ujust setup-virtualization
+    remove:
+      packages:
+        - waydroid
+        - waydroid-selinux
+        - input-remapper
+
+  - type: script
+    scripts:
+      - install-bob.sh
+
+  - type: systemd
+    system:
+      enabled:
+        - keyd
+        - tailscaled
+        - playit
+
+  - type: signing # this sets up the proper policy & signing files for signed images to work fully
