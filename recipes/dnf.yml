@@ -6,6 +6,10 @@ modules:
 
   - type: dnf
     repos:
+      files:
+        - terra.repo
+        - playit-fedora.repo
+        - tailscale.repo
       copr:
         - atim/starship
         - avengemedia/dms # Niri
@@ -63,7 +67,6 @@ modules:
         - xdg-desktop-portal-wlr
         - tailscale
         - playit
-        - cloudflared
         # Setup virtualization with ujust setup-virtualization
     remove:
       packages:
@@ -74,6 +77,7 @@ modules:
   - type: script
     scripts:
       - install-bob.sh
+      - install-cloudflared.sh
 
   - type: systemd
     system:
