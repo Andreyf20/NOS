@@ -35,8 +35,6 @@ modules:
         - zoxide
         - lazygit
         - diff-so-fancy
-        # Greater session manager
-        - ly
         # WMs
         - niri
         - mangowm
@@ -85,8 +83,5 @@ modules:
         - keyd
         - tailscaled
         - playit
-        - ly
-      disabled:
-        - gdm
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
