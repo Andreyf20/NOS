@@ -74,6 +74,7 @@ modules:
         - waydroid
         - waydroid-selinux
         - input-remapper
+        - alacritty
 
   - type: script
     scripts:
