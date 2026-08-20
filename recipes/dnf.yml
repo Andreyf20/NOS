@@ -67,6 +67,7 @@ modules:
         - playit
         - lact
         - heroic
+        - sshfs
         - gnome-initial-setup
         # Setup virtualization with ujust setup-virtualization
     remove:
