@@ -24,6 +24,7 @@ modules:
         - alacritty
       packages:
         # Terminal stuff
+        - tree-sitter-cli
         - starship
         - fish
         - unzip
