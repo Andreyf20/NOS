@@ -20,6 +20,8 @@ modules:
         - scottames/awww
         - mineiro/satty
     install:
+      exclude:
+        - alacritty
       packages:
         # Terminal stuff
         - starship
@@ -75,7 +77,6 @@ modules:
         - waydroid
         - waydroid-selinux
         - input-remapper
-        - alacritty
 
   - type: script
     scripts:
