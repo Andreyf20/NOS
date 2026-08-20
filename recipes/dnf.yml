@@ -81,6 +81,7 @@ modules:
       - install-bob.sh
       - install-cloudflared.sh
       - rename-os.sh
+      - cleanup-waydroid.sh
 
   - type: systemd
     system:
