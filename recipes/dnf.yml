@@ -65,6 +65,7 @@ modules:
         - xdg-desktop-portal-wlr
         - tailscale
         - playit
+        - lact
         - gnome-initial-setup
         # Setup virtualization with ujust setup-virtualization
     remove:
@@ -85,5 +86,6 @@ modules:
         - keyd
         - tailscaled
         - playit
+        - lactd
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
